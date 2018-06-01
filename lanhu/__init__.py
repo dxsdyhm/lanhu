@@ -1,5 +1,5 @@
+# coding:utf-8
 import json
-
 import requests
 from wxpy import *
 import re
@@ -30,12 +30,11 @@ def forward_boss_message(msg):
             lanhudes = lanhudes.replace('"', ":")
             lanhuToUser = re.findall(name, data['Content'])[0]
             dat = wechatlanhu(data['FileName'], lanhudes, data['Url'], lanhuToUser)
-            print(changeBody(dat.__dict__))
             response = requests.post(lanhu_url, data=dat.__dict__, )
-            print(response)
+            print response
         else:
-            print(msg.text)
+            print msg.text
     else:
-        print(msg.type)
+        print msg.type
 # 堵塞线程
 embed()
