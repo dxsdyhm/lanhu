@@ -6,10 +6,12 @@ class wechatlanhu(object):
     text=''
     url=''
     at=''
+    atAll='0'
 
-    def __init__(self,title,text,url,at):
+    def __init__(self,title,text,url,at,atAll):
         self.title = title
         self.text = text
         self.url = url
         self.at = phone[at]
+        self.atAll=atAll
 

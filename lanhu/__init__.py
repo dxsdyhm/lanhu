@@ -25,12 +25,13 @@ def changeBody(data):
 def forward_boss_message(msg):
     if msg.type==SHARING:
         data = msg.raw
+        print(data)
         text=data['Text']
         if text==u'新评价通知':
             lanhudes = re.findall(des, data['Content'], re.S)[0]
             lanhuToUser = re.findall(name, lanhudes)[0]
             lanhudes = lanhudes.replace('"', ":")
-            dat = wechatlanhu(data['Text'], lanhudes, data['Url'], lanhuToUser)
+            dat = wechatlanhu(data['Text'], lanhudes, data['Url'], lanhuToUser,'0')
             response = requests.post(lanhu_url, data=dat.__dict__)
             print(response)
         else:
