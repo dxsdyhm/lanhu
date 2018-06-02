@@ -19,6 +19,12 @@ or
 pip install -U wxpy -i "https://pypi.doubanio.com/simple/"
 ```
 
+# install requests
+
+```
+pip install requests
+```
+
 # run
 
 python __init__.py
